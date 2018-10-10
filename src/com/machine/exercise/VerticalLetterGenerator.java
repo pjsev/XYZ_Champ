@@ -6,13 +6,13 @@ public class VerticalLetterGenerator {
     static String[] letters = {"X", "y", "z", "z"};
 
     public static void main(String[] args) throws Exception {
+
         LetterFactory factory = new LetterFactory(gridSize);
 
         for (String s: letters) {
             char[][] c = factory.getLetter(s).buildLetter();
-            Letter.printVertically(c);
+            printVertically(c);
         }
-
 
         /*
         Letter letterX = factory.getLetter("x");
@@ -27,5 +27,9 @@ public class VerticalLetterGenerator {
         letterZ.buildLetter();
         Letter.printVertically(letterZ.getLetter());
         */
+    }
+
+    public static void printVertically(char[][] grid) {
+        Letter.printGrid(grid);
     }
 }
